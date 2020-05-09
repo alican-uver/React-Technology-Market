@@ -7,53 +7,53 @@ import '../App.scss';
 
 
 const Navbar = () => {
-    return (
-        <React.Fragment>
-            <ProductConsumer>
-                {
-                    value => {
-                        const { cartItems, handleSidebar, handleCart } = value;
-                        return <NavWrapper>
-                            <div className="nav-center">
-                                <FaBars className="nav-icon" onClick={handleSidebar} />
-                                <img src={logo} className = "logo-img" alt="store logo"/>
-                                <div className = "nav-cart">
-                                    <FaCartPlus className = "nav-icon" onClick = {handleCart} />
-                                    <div className = "cart-items">{cartItems}</div>
-                                </div>
-                            </div>
-                        </NavWrapper>
-                    }
-                }
-            </ProductConsumer>
-        </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <ProductConsumer>
+        {
+          value => {
+            const { cartItems, handleSidebar, handleCart } = value;
+            return <NavWrapper>
+              <div className="nav-center">
+                  <FaBars className="nav-icon" onClick={handleSidebar} />
+                  <img src={logo} className="logo-img" alt="store logo" />
+                <div className="nav-cart">
+                  <FaCartPlus className="nav-icon" onClick={handleCart} />
+                  <div className="cart-items">{cartItems}</div>
+                </div>
+              </div>
+            </NavWrapper>
+          }
+        }
+      </ProductConsumer>
+    </React.Fragment>
+  )
 }
 export default Navbar;
 
 const NavWrapper = styled.nav`
-position: sticky;
-position: -webkit-sticky;
-top:0;
-width: 100%;
-padding: 0px 20px;
-background: $mainGrey;
-border-bottom: 2px solid $mainGrey;
+  position: sticky;
+  position: -webkit-sticky;
+  top:0;
+  width: 100%;
+  padding: 0px 20px;
+  background: #fff;
+  border-bottom: 2px solid #f1f1f1;
 .nav-center {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav-icon {
-    font-size: 1.7rem;
-    cursor: pointer;
+  font-size: 1.7rem;
+  cursor: pointer;
 }
 
 .nav-cart {
-    position: relative;
+  position: relative;
 }
 
 .cart-items {
