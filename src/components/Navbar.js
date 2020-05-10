@@ -3,8 +3,6 @@ import { FaBars, FaCartPlus } from 'react-icons/fa';
 import styled from 'styled-components';
 import { ProductConsumer } from '../context/context';
 import logo from '../images/tech-store-logo.svg';
-import '../App.scss';
-
 
 const Navbar = () => {
   return (
@@ -39,6 +37,7 @@ const NavWrapper = styled.nav`
   padding: 0px 20px;
   background: #fff;
   border-bottom: 2px solid #f1f1f1;
+  z-index: 1;
 .nav-center {
   display: flex;
   align-items: center;
@@ -58,14 +57,14 @@ const NavWrapper = styled.nav`
 
 .cart-items {
     position: absolute;
-    top:-24px;
-    left: 20px;
+    top:-18px;
+    left: 17px;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     background-color: gray;
-    padding: 1px 3px;
+    padding: 0 3px;
     color: #fff;
-    border-radius: 3px;
+    border-radius: 50%;
 }
 
 .logo-img {
