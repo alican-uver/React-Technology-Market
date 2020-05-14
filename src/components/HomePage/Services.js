@@ -55,6 +55,7 @@ class Services extends Component {
 export default Services;
 
 const ServicesWrapper = styled.div`
+  background: var(--mainGrey);
   .service-icon {
     font-size: 2.5rem;
     color: var(--darkBlue)

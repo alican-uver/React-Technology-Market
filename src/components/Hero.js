@@ -21,7 +21,7 @@ const HeroWrapper = styled.div`
   align-items:center;
   justify-content:center;
   text-align:center;
-  min-height: ${props => props.max ? 'calc(100vh - 120px)' : '60vh'};
+  min-height: ${props => props.max ? 'calc(100vh - 120px)' : '70vh'};
   background: linear-gradient(rgba(0, 0, 0, 0.1), #000),
   url(${props => props.img}) center/cover no-repeat;
 
