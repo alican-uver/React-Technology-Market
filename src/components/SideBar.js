@@ -37,7 +37,7 @@ const SidebarWrapper = styled.div`
   left: 0;
   width: 30%;
   height: 100%;
-  background-color: #f1f1f1;
+  background-color: var(--mainGrey);
   z-index: 1;
   border-right: 2px solid #f1f1f1;
   transition: all .3s cubic-bezier(1, 0, 0, 1);
@@ -53,12 +53,12 @@ const SidebarWrapper = styled.div`
     width: 100%;
     font-size: 25px;
     text-transform: capitalize;
-    color: #000;
+    color: var(--mainBlack);
     padding: 10px 15px;
     background: transparent;
     transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
     &:hover{
-      background: #fff;
+      background: var(--mainWhite);
       padding-left: 25px;
       text-decoration: none;
     }

@@ -32,7 +32,7 @@ const HeroWrapper = styled.div`
     border-radius: 5px;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
-    color: #fff;
+    color: var(--mainWhite);
   }
 
   .title {

@@ -39,13 +39,13 @@ const Footer = () => {
 export default Footer;
 
 const FooterWrapper = styled.footer`
-background: #34495e;
+background: var(--darkBlue);
 .footer-icon {
   font-size: 1.5rem;
   cursor: pointer;
-  color:#fff ;
+  color: var(--mainWhite) ;
   &:hover {
-    color: #3498db;
+    color: var(--mainBlue);
   }
 }
 `;

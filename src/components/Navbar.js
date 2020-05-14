@@ -35,8 +35,8 @@ const NavWrapper = styled.nav`
   top:0;
   width: 100%;
   padding: 0px 20px;
-  background: #fff;
-  border-bottom: 2px solid #f1f1f1;
+  background: var(--mainWhite);
+  border-bottom: 2px solid var(--mainGrey);
   z-index: 1;
 .nav-center {
   display: flex;
@@ -61,9 +61,9 @@ const NavWrapper = styled.nav`
     left: 17px;
     font-size: 18px;
     font-weight: 600;
-    background-color: gray;
+    background-color: var(--darkGrey);
     padding: 0 3px;
-    color: #fff;
+    color: var(--mainWhite);
     border-radius: 50%;
 }
 
@@ -71,7 +71,5 @@ const NavWrapper = styled.nav`
     width: 150px;
     height: 120px;
 }
-
-
 
 `;

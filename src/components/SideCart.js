@@ -25,7 +25,7 @@ const CartWrapper = styled.div`
   right:0;
   width: 30%;
   height: 100%;
-  background: #f1f1f1;
+  background: var(--mainGrey);
   z-index: 1;
   transition: all .3s cubic-bezier(1, 0, 0, 1);
   transform: ${ props => props.show ? 'translateX(0)' : 'translateX(100%)'};

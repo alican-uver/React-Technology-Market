@@ -1,24 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,700&display=swap&subset=latin-ext');
-// Variables
-// $primaryColor: #5fb7ea;
-// $primaryRGBA: rgba(0, 0, 0, 0.3);
-// $mainGrey: #fafafa;
-// $darkGrey: #5f5e5e;
-// $mainWhite: #fff;
-// $mainBlack: #222;
-// $mainTransition: all 0.3s ease-in-out;
-// $mainSpacing: 0.3rem;
+:root {
+    --primaryColor: #5fb7ea;
+    --mainWhite: #fff;
+    --mainBlack: #222;
+    --mainGrey: #f1f1f1;
+    --mainBlue: #3498db;
+    --darkBlue: #34495e;
+    --darkGrey: rgb(201, 197, 197);
+    --mainTransition: all .3s ease-in-out;
+    --mainSpacing: .3rem;
 
-// %textTitle {
-//     font-family: 'Montserrat', sans-serif;
-//     font-weight: bold;
-//     letter-spacing: $mainSpacing;
-//     text-transform: capitalize;
-// }
-
-// %text-main {
-//     color: $primaryColor;
-// }
+  }
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -27,18 +19,18 @@ body {
 // Useful Link The All Pages
 .main-link{  
     padding: 5px 10px;
-    color: #000;
+    color: var(--mainBlack);
     display:inline-block;
     letter-spacing: .3px;
     outline: 2px solid gray;
     outline-offset: 2px;
     transition: all .2s linear;
-    background-color: #f1f1f1;
+    background-color: var(--mainGrey);
     border:none;
     text-transform: uppercase;
     &:hover{
-        color: #fff;
-        background-color: #000;
+        color: var(--mainWhite);
+        background-color: var(--mainBlack);
         text-decoration: none;
     }
 }
