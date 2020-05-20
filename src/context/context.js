@@ -11,7 +11,7 @@ class ProductProvider extends Component {
         cartOpen: false,
         links: linkData,
         socialIcons: socialData,
-        cart: [], // for now
+        cart: [],
         cartItems:0,
         cartSubTotal: 0,
         cartTax: 0,
@@ -79,7 +79,28 @@ class ProductProvider extends Component {
 
     // add to cart 
     addToCart = id => {
-        console.log(`add to cart`, id)
+        let tempCart = [...this.state.cart];
+        let tempProducts = [...this.state.storeProducts];
+        let tempItem = tempCart.find(item => item.id === id);
+        if (!tempItem) { // if undefined ; first add 
+            tempItem = tempProducts.find(item => item.id === id);
+            let total = tempItem.price;
+            let cartItem = {...tempItem, amount: 1, total};
+            tempCart = [...tempCart, cartItem];
+        }
+        else {
+            tempItem.amount++;
+            tempItem.total = tempItem.price * tempItem.amount;
+            tempItem.total = parseFloat(tempItem.total.toFixed(2));
+        }
+
+        this.setState(() => {
+            return {cart: tempCart}
+        }, () => {
+            this.addTotals();
+            this.syncStorage();
+            this.openCart();
+        })
     }
 
     // set single product
