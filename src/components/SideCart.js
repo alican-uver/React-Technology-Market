@@ -9,8 +9,8 @@ const SideCart = () => {
         value => {
           const { cartOpen, closeCart, cart } = value;
             return <CartWrapper show={cartOpen} onClick={closeCart}>
-              {cart}
-          </CartWrapper>
+                 {/* cart */}
+            </CartWrapper>
         }
       }
     </ProductConsumer>
