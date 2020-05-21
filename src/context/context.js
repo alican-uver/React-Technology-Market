@@ -69,10 +69,40 @@ class ProductProvider extends Component {
     }
 
     // get totals
-    getTotals = () => {}
+    getTotals = () => {
+        const { cart } = this.state;
+        let subTotal = 0;
+        let cartItems = 0;
+        
+        cart.forEach(item => {
+            subTotal += item.total;
+            cartItems += item.amount;
+        });
+        
+        subTotal = parseFloat(subTotal.toFixed(2));
+        let tax = subTotal * 0.2;
+        tax = parseFloat(tax.toFixed(2));
+        let total = subTotal + tax; 
+        total = parseFloat(total.toFixed(2));    
+        
+        return {
+            cartItems, 
+            subTotal,
+            tax,
+            total
+        }
+    }
 
     //add totals
-    addTotals = () => {}
+    addTotals = () => {
+        const totals = this.getTotals();
+        this.setState({
+            cartItems: totals.cartItems,
+            cartSubTotal: totals.subTotal,
+            cartTax: totals.tax,
+            cartTotal: totals.total
+        })
+    }
 
     // sync storage 
     syncStorage = () => {}
@@ -93,6 +123,7 @@ class ProductProvider extends Component {
             tempItem.total = tempItem.price * tempItem.amount;
             tempItem.total = parseFloat(tempItem.total.toFixed(2));
         }
+        console.log(tempCart)
 
         this.setState(() => {
             return {cart: tempCart}
@@ -145,7 +176,7 @@ class ProductProvider extends Component {
                 handleCart: this.handleCart,
                 closeCart: this.closeCart,
                 openCart: this.openCart,
-                addToCart : this.addToCart,
+                addToCart: this.addToCart,
                 setSingleProduct: this.setSingleProduct
             }}>
                 {this.props.children}
