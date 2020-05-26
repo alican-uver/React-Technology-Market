@@ -1,10 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Hero from '../components/Hero';
+import cartBcg from '../images/storeBcg.jpeg';
+import CartSection from '../components/CartPage'; // ı can select all CartPage components like this.
 
 class CartPage extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1>Cart Page</h1>
+                <Hero img = {cartBcg} />
+                <CartSection />
             </React.Fragment>
         )
     }
