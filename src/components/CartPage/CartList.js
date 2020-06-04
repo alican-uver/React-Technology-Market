@@ -5,8 +5,6 @@ import CartItem from "./CartItem";
 const CartList = () => {
   return (
     <div className="container-fluid">
-      <div className="row">
-        <div className="col">
           <ProductConsumer>
             {(value) => {
               const { cart, increment, decrement, removeItem } = value;
@@ -35,8 +33,6 @@ const CartList = () => {
             }}
           </ProductConsumer>
         </div>
-      </div>
-    </div>
   );
 };
 
