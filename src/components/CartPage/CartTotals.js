@@ -15,9 +15,9 @@ const CartTotals = () => {
                 >
                 Clear Cart
                 </button>
-                <h3>Subtotal: ${cartSubTotal} </h3>
-                <h3>CartTax: ${cartTax} </h3>
-                <h3>CartTotal: ${cartTotal} </h3>
+                <h3>Subtotal: {cartSubTotal} </h3>
+                <h3>CartTax: {cartTax} </h3>
+                <h3>CartTotal: {cartTotal} </h3>
               </div>
             );
           }}
