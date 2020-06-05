@@ -11,7 +11,7 @@ const CartList = () => {
               if (cart.length === 0) {
                 return (
                   <h2 className="text-uppercase text-center">
-                    cour cart is empty
+                    your cart is empty
                   </h2>
                 );
               }
