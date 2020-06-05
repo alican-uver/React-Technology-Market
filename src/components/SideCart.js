@@ -25,7 +25,7 @@ const SideCart = () => {
                 );
               })}
             </ul>
-            <h4 className="text-capitalize">cart total : ${cartTotal} </h4>
+            <h4 className="text-capitalize">cart total : {cartTotal} </h4>
             <div className="text-center mt-3">
               <Link to = "/cart" className = "p-2 main-link">cart page</Link>
             </div>
