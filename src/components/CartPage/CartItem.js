@@ -6,10 +6,18 @@ import {
 } from "react-icons/fa";
 
 const CartItem = ({ cartItem, increment, decrement, removeItem }) => {
+
   const { id, title, price, amount, total, image } = cartItem;
+  let editTotal = () => {
+    let formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+    return formatter.format(total);
+  }
 
   return (
-    <div className="row mt-5 mt-lg-0 text-capitalize align-items-center text-center">
+    <div className="row mt-5 mt-lg-0 text-capitalize d-flex align-items-baseline text-center">
       {/* image */}
       <div className="col-10 mx-auto col-lg-2 pb-2">
         <img src={image} width="60" className="img-fluid" alt="product" />
@@ -47,7 +55,7 @@ const CartItem = ({ cartItem, increment, decrement, removeItem }) => {
       </div>
       {/* item total */}
       <div className="col-10 mx-auto col-lg-2">
-        <strong className="text-muted">item total: $ {total}</strong>
+        <strong className="text-muted">item total: {editTotal()}</strong>
       </div>
     </div>
   );
