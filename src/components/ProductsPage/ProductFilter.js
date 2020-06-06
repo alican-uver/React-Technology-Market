@@ -16,6 +16,14 @@ const FilterProducts = () => {
           handleChange,
           storeProducts,
         } = value;
+
+        let companies = new Set();
+        companies.add("all");
+        for (let product in storeProducts) {
+          companies.add(storeProducts[product]["company"]);
+        }
+        companies = [...companies]; 
+
         return (
           <div className="row my-5">
             <div className="col-10 mx-auto">
@@ -30,7 +38,7 @@ const FilterProducts = () => {
                     onChange={handleChange}
                     value={search}
                     className="filter-item"
-                    placeholder ="search product"
+                    placeholder="search product"
                   />
                 </div>
                 {/* category search */}
@@ -43,10 +51,13 @@ const FilterProducts = () => {
                     value={company}
                     className="filter-item"
                   >
-                    <option value="all">all</option>
-                    <option value="samsung">samsung</option>
-                    <option value="apple">apple</option>
-                    <option value="nikon">nikon</option>
+                    {companies.map((company, index) => {
+                      return (
+                        <option key={index} value={company}>
+                          {company}
+                        </option>
+                      );
+                    })}
                   </select>
                 </div>
                 {/* price range */}
@@ -77,7 +88,7 @@ const FilterProducts = () => {
                     name="shipping"
                     id="shipping"
                     onChange={handleChange}
-                    value={shipping && true}
+                    checked={shipping && true}
                   />
                 </div>
               </FilterWrapper>
