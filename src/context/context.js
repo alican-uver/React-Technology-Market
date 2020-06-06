@@ -22,12 +22,12 @@ class ProductProvider extends Component {
         singleProduct: {},
         loading: true,
         //filter
-        searh: '',
+        search: '',
         price: 0,
         min: 0,
         max: 0,
         company: 'all',
-        shipping:false
+        shipping: false
     }
 
     componentDidMount() {
@@ -42,10 +42,10 @@ class ProductProvider extends Component {
         })
             .then(items => {
                 let products = items.items.map(product => {
-                    const { title, price, company, description, featured } = product.fields;
+                    const { title, price, company, description, featured, freeShipping } = product.fields;
                     const { id } = product.sys;
                     const image = product.fields.image.fields.file.url
-                    return { title, price, company, description, featured, id, image }
+                    return { title, price, company, description, featured, id, image, freeShipping }
                 })
                 this.dividingState(products);
             })
@@ -268,11 +268,46 @@ class ProductProvider extends Component {
 
     // handle filtering
     handleChange = event => {
-        console.log(event)
+        const name = event.target.name;
+        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+
+        this.setState({
+            [name] : value
+        }, this.sortData)
     }
 
     sortData = () => {
+        const { storeProducts, price, company, shipping, search } = this.state;
+        let tempPrice = parseInt(price); 
+        let tempProducts = [...storeProducts];
+        
+        // Price filtering 
+        tempProducts = tempProducts.filter(item => item.price <= tempPrice);
+        // Company filtering
+        if (company !== "all") {
+            tempProducts = tempProducts.filter(item => (item.company).toLowerCase() === (company).toLowerCase())
+        } 
 
+        // Free Shipping filtering
+        if (shipping) {
+            tempProducts = tempProducts.filter(item => item.freeShipping === true)
+        }
+        // Search filtering
+        if (search.length > 0) {
+            tempProducts = tempProducts.filter(item => {
+                let tempSearch = search.toLowerCase();
+                let tempTitle = item.title.toLowerCase().slice(0, search.length);
+
+                if (tempSearch === tempTitle) {
+                    return item;
+                }
+            })
+        }
+
+        
+        this.setState({
+            filteredProducts: tempProducts
+        }) 
     }
 
 
