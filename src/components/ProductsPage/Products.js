@@ -19,7 +19,7 @@ const Products = () => {
               {/* total count */}
               <div className="row">
                 <div className="col-10 mx-auto">
-                  <h6>total products: ${filteredProducts.length} </h6>
+                  <h5 className="text-uppercase text-light bg-dark py-2 text-center" style={{ borderRadius: "5px" }}>total products: {filteredProducts.length} </h5>
                 </div>
               </div>
               {/* products */}
@@ -29,10 +29,10 @@ const Products = () => {
                     There isn't no items match your search
                   </div>
                 ) : (
-                  filteredProducts.map((product) => {
-                    return <Product key={product.id} product={product} />;
-                  })
-                )}
+                    filteredProducts.map((product) => {
+                      return <Product key={product.id} product={product} />;
+                    })
+                  )}
               </div>
             </div>
           </section>
