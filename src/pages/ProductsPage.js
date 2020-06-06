@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Products from '../components/Products';
+import Products from '../components/ProductsPage/Products';
 import Hero from '../components/Hero';
 import productsBcg from '../images/productsBcg.jpeg';
 
