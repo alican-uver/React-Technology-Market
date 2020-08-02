@@ -1,1 +1,3 @@
+- #### This project is based on the reuse of each component using the 'context api’ and also aims at a reusable interface system that can be modified with the help of ‘ props via 'the styled component‘. Since more time was spent with React, the filing system was created in a completely logical way and made much more detailed and logical. The interface is based on bootstrap and’ styled component ' module is used in places. In order to keep the data in the project, the ‘contentful’ (like-firebase database) system was based and the data was taken through this site.
+
 ### Live: https://alcnuvr-tech-store.netlify.app/
